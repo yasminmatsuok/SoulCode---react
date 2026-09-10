@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-bgPrimary text-textPrimary font-poppins;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-brandPrimary text-textPrimary px-8 py-3 rounded-pill font-semibold
+      transition-all hover:bg-brandSecondary hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply inline-block bg-transparent text-textPrimary px-8 py-3 rounded-pill font-semibold
+      border-2 border-brandPrimary transition-all hover:bg-brandPrimary hover:-translate-y-0.5;
+  }
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+  .section-subtitle {
+    @apply text-textSecondary text-lg mb-12;
+  }
+  .highlight {
+    @apply text-accent;
+  }
+  .container-app {
+    @apply max-w-6xl mx-auto px-8;
+  }
+}
