@@ -13,7 +13,7 @@ function Faq() {
       >
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Perguntas <span className="highlight">Frequentes</span>
+            Perguntas <span className="highlight">Frequentes sobre o Avatar</span>
           </h1>
           <p className="text-textSecondary text-lg">Tire suas dúvidas sobre o Avatar Inteligente da SoulUp</p>
         </div>
