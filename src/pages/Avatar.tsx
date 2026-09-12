@@ -28,7 +28,8 @@ function Avatar() {
         <div className="container-app grid md:grid-cols-[300px_1fr] gap-8">
           <div className="text-center">
             <div className="w-40 h-40 mx-auto rounded-full bg-bgSecondary border-2 border-brandPrimary flex items-center justify-center mb-4 overflow-hidden">
-            <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Avatar Soul" className="w-24 h-24 object-contain" /><img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Avatar Soul" className="w-24 h-24 object-contain" />            </div>
+              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Avatar Soul" className="w-24 h-24 object-contain" />
+            </div>
             <h2 className="text-xl font-bold">Souli</h2>
             <p className="text-accent text-sm mb-4">● Online</p>
             <div className="grid grid-cols-3 gap-3">
