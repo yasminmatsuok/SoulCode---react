@@ -69,8 +69,8 @@ A aplicação sobe por padrão em `http://localhost:5173`.
 
 ## Integrantes do grupo
 
-- Yasmin de Oliveira Matsuok — RM573083 — Front-End Design Engineering
-- Murilo Gomes Santiago Carnaval — RM573067 — Database Administrator
 - Davi Trindade Ribeiro — RM571336 — Backend Developer - Java & Python
-- Yasmin Cappi Santos — RM571926 — Documentation, UX Writing & Pitch
 - Maria Vitória Cândida Carvalho — RM570850 — Artificial Intelligence & Chatbot
+- Murilo Gomes Santiago Carnaval — RM573067 — Database Administrator
+- Yasmin Cappi Santos — RM571926 — Documentation, UX Writing & Pitch
+- Yasmin de Oliveira Matsuok — RM573083 — Front-End Design Engineering
