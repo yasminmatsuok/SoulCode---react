@@ -6,10 +6,10 @@ Evolução do site estático (HTML/CSS/JS) das sprints anteriores para uma
 
 ## Descrição do projeto
 
-A SoulUp é uma plataforma digital que transforma interações online em
-benefícios reais para os usuários e impacto positivo para o planeta, através
-de um **Avatar Inteligente** que sugere ações sustentáveis, acompanha missões
-e gera recompensas. Este repositório contém o front-end da aplicação.
+A SoulUp é uma plataforma digital que conecta pessoas a ações sustentáveis do dia a dia,
+recompensando boas práticas com benefícios reais. Este projeto apresenta o Avatar Inteligente,
+um assistente que acompanha o usuário, sugere missões e acompanha o progresso de cada um rumo
+a um estilo de vida mais consciente.
 
 ## Tecnologias utilizadas
 
