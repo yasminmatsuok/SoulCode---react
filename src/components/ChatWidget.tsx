@@ -4,20 +4,35 @@ import type { ChatMessage } from "../types";
 const RESPOSTAS: Record<string, string> = {
   "ver minhas missões":
     "Você tem 3 missões pendentes: 🚌 Use Transporte Público, ♻️ Recicle seu Lixo e 💡 Economize Energia. Quer iniciar alguma?",
-  "quantos pontos tenho?": "Você tem 450 pontos acumulados! 🏆 Continue assim, está indo muito bem!",
+  "quantos pontos tenho?":
+    "Você tem 450 pontos acumulados! 🏆 Faltam só 50 pontos para o próximo nível!",
   "dicas sustentáveis":
     "Aqui vão algumas dicas: 🌱 Prefira transporte público, ♻️ separe seu lixo, 💡 desligue as luzes ao sair e 🚿 tome banhos mais curtos!",
+  "meu nível": "Você está no Nível 3 - Explorador! 🌟",
 };
 
-const SUGESTOES = ["Ver minhas missões", "Quantos pontos tenho?", "Dicas sustentáveis"];
+const SUGESTOES = [
+  "Ver minhas missões",
+  "Quantos pontos tenho?",
+  "Dicas sustentáveis",
+  "Meu nível",
+];
 
 let messageId = 0;
 const nextId = () => `msg-${messageId++}`;
 
 function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { id: nextId(), from: "avatar", text: "Olá! Eu sou o Soul, seu avatar inteligente! 🌱 Como posso te ajudar hoje?" },
-    { id: nextId(), from: "avatar", text: "Você tem 3 missões pendentes. Quer ver quais são?" },
+    {
+      id: nextId(),
+      from: "avatar",
+      text: "Olá! Eu sou o Soul, seu avatar inteligente! 🌱 Como posso te ajudar hoje?",
+    },
+    {
+      id: nextId(),
+      from: "avatar",
+      text: "Você tem 3 missões pendentes. Quer ver quais são?",
+    },
   ]);
   const [inputValue, setInputValue] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -36,13 +51,18 @@ function ChatWidget() {
       const resposta =
         RESPOSTAS[text.toLowerCase()] ||
         "Entendi! Estou aqui para te ajudar a ser mais sustentável. 🌱 Tente perguntar sobre suas missões ou pontos!";
-      setMessages((prev) => [...prev, { id: nextId(), from: "avatar", text: resposta }]);
+      setMessages((prev) => [
+        ...prev,
+        { id: nextId(), from: "avatar", text: resposta },
+      ]);
     }, 800);
   }
 
   return (
     <div className="bg-bgSecondary border border-borderColor rounded-card overflow-hidden flex flex-col">
-      <div className="bg-brandPrimary px-6 py-4 font-semibold text-sm">🐟 Soul — Avatar Inteligente</div>
+      <div className="bg-brandPrimary px-6 py-4 font-semibold text-sm">
+        🐟 Soul — Avatar Inteligente
+      </div>
 
       <div className="p-6 min-h-[250px] max-h-[300px] overflow-y-auto flex flex-col gap-4">
         {messages.map((msg) => (
