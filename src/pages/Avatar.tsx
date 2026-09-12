@@ -1,10 +1,26 @@
 import ChatWidget from "../components/ChatWidget";
 
 const FEATURES = [
-  { icon: "🎯", title: "Sugerir Missões", text: "O Soul analisa seu perfil e sugere missões sustentáveis personalizadas para você." },
-  { icon: "📊", title: "Acompanhar Progresso", text: "Monitora suas ações e mostra seu evolução em tempo real." },
-  { icon: "💡", title: "Dicas Sustentáveis", text: "Oferece dicas personalizadas baseadas no seu comportamento." },
-  { icon: "📝", title: "Criar Publicações", text: "Gera conteúdo automaticamente para compartilhar suas conquistas." },
+  {
+    icon: "🎯",
+    title: "Sugerir Missões",
+    text: "O Soul analisa seu perfil e sugere missões sustentáveis personalizadas para você.",
+  },
+  {
+    icon: "📊",
+    title: "Acompanhar Progresso",
+    text: "Monitora suas ações e mostra sua evolução em tempo real, com base no seu histórico.",
+  },
+  {
+    icon: "💡",
+    title: "Dicas Sustentáveis",
+    text: "Oferece dicas personalizadas e práticas, baseadas no seu histórico de ações.",
+  },
+  {
+    icon: "📝",
+    title: "Criar Publicações",
+    text: "Gera conteúdo automaticamente para compartilhar suas conquistas.",
+  },
 ];
 
 function Avatar() {
@@ -12,14 +28,16 @@ function Avatar() {
     <main>
       <section
         className="min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
-        style={{ background: "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)" }}
+        style={{
+          background: "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)",
+        }}
       >
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
             Seu <span className="highlight">Avatar Inteligente</span>
           </h1>
           <p className="text-textSecondary text-lg">
-            Um assistente inteligente personalizado que evolui com suas experiências e auxilia você em cada desafio
+            Um assistente inteligente que aprende com você e te ajuda a construir hábitos mais sustentáveis.
           </p>
         </div>
       </section>
@@ -28,7 +46,11 @@ function Avatar() {
         <div className="container-app grid md:grid-cols-[300px_1fr] gap-8">
           <div className="text-center">
             <div className="w-40 h-40 mx-auto rounded-full bg-bgSecondary border-2 border-brandPrimary flex items-center justify-center mb-4 overflow-hidden">
-              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Avatar Soul" className="w-24 h-24 object-contain" />
+              <img
+                src="/favicon.png"
+                alt="Avatar Soul"
+                className="w-24 h-24 object-contain"
+              />
             </div>
             <h2 className="text-xl font-bold">Souli</h2>
             <p className="text-accent text-sm mb-4">● Online</p>
@@ -57,7 +79,9 @@ function Avatar() {
           <h2 className="section-title">
             O que o <span className="highlight">Soul</span> pode fazer?
           </h2>
-          <p className="section-subtitle">Seu avatar está sempre pronto para te ajudar</p>
+          <p className="section-subtitle">
+            Seu avatar está sempre pronto para te ajudar
+          </p>
           <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
             {FEATURES.map((f) => (
               <div

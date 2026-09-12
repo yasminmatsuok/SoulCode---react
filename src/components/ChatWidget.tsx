@@ -26,7 +26,7 @@ function ChatWidget() {
     {
       id: nextId(),
       from: "avatar",
-      text: "Olá! Eu sou o Soul, seu avatar inteligente! 🌱 Como posso te ajudar hoje?",
+      text: "Olá! Eu sou o Soul, seu avatar inteligente! Como posso te ajudar hoje?",
     },
     {
       id: nextId(),
