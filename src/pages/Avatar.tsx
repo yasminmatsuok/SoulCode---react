@@ -37,7 +37,7 @@ function Avatar() {
             Seu <span className="highlight">Avatar Inteligente</span>
           </h1>
           <p className="text-textSecondary text-lg">
-            
+            Um assistente inteligente que aprende com você e te ajuda a construir hábitos mais sustentáveis.
           </p>
         </div>
       </section>
