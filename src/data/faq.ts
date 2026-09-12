@@ -1,5 +1,5 @@
 import type { FaqEntry } from "../types";
-
+ 
 export const faqEntries: FaqEntry[] = [
   {
     id: "o-que-e",
@@ -35,6 +35,6 @@ export const faqEntries: FaqEntry[] = [
     id: "seguranca-dados",
     question: "Meus dados estão seguros?",
     answer:
-      "Sim! A plataforma utiliza autenticação segura, controle de acesso e separação entre dados pessoais e analíticos para garantir sua privacidade.",
+      "Sim! A plataforma utiliza autenticação segura, criptografia de dados sensíveis, controle de acesso e separação entre dados pessoais e analíticos para garantir sua privacidade em todos os momentos.",
   },
 ];
