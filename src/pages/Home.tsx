@@ -19,7 +19,7 @@ const CARDS = [
 ];
 
 const STATS = [
-  { value: "61.242", label: "Usuários" },
+  { value: "67.108", label: "Usuários" },
   { value: "183.057", label: "Eventos" },
   { value: "9.599", label: "Usuários Ativos" },
   { value: "15.572", label: "Sessões" },
