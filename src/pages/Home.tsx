@@ -45,7 +45,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-8 bg-bgSecondary text-center">
+      <section className="py-24 px-8 bg-bgSecondary text-center">
         <div className="container-app">
           <h2 className="section-title">
             Como <span className="highlight">Funciona</span>
