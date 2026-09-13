@@ -1,5 +1,6 @@
 export type Difficulty = "facil" | "medio" | "dificil";
 
+// Representa uma missão sustentável disponível na plataforma
 export interface Mission {
   id: string;
   icon: string;
