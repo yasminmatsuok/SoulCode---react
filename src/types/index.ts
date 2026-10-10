@@ -1,7 +1,10 @@
 export type Difficulty = "facil" | "medio" | "dificil";
 
+// Union Type: o back-end Java pode devolver o id como número (Long) ou texto
+export type EntityId = number | string;
+
 export interface Mission {
-  id: string;
+  id: EntityId;
   icon: string;
   title: string;
   description: string;
@@ -39,3 +42,13 @@ export interface ContactFormData {
   subject: string;
   message: string;
 }
+
+// Dados enviados ao criar/editar uma missão (a API é quem gera o id)
+export type MissionInput = Omit<Mission, "id">;
+
+// Intersection Type: missão + metadados opcionais que a API pode devolver
+export type ApiMeta = { createdAt?: string; updatedAt?: string };
+export type MissionDetail = Mission & ApiMeta;
+
+// Estado de uma requisição (Union Type de estados)
+export type RequestStatus = "loading" | "success" | "error";
