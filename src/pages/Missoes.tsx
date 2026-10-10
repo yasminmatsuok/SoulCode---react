@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import MissionCard from "../components/MissionCard";
-import { missions } from "../data/missions";
+import { EmptyMessage, ErrorMessage, Loading } from "../components/StatusMessage";
+import { useApi } from "../hooks/useApi";
+import { listMissions } from "../services/missionService";
 import type { Difficulty } from "../types";
 
 type FilterValue = Difficulty | "todas";
@@ -21,7 +24,10 @@ const PROGRESS = [
 
 function Missoes() {
   const [filter, setFilter] = useState<FilterValue>("todas");
+  const { data, status, error, reload } = useApi(listMissions);
+  const flash = (useLocation().state as { flash?: string } | null)?.flash;
 
+  const missions = data ?? [];
   const filteredMissions =
     filter === "todas" ? missions : missions.filter((m) => m.difficulty === filter);
 
@@ -78,11 +84,30 @@ function Missoes() {
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {filteredMissions.map((mission) => (
-              <MissionCard key={mission.id} mission={mission} />
-            ))}
+          {flash && (
+            <p role="status" className="mb-6 text-green-400 text-sm">
+              ✅ {flash}
+            </p>
+          )}
+
+          <div className="mb-8">
+            <Link to="/missoes/nova" className="btn-primary">
+              + Nova missão
+            </Link>
           </div>
+
+          {status === "loading" && <Loading message="Carregando missões..." />}
+          {status === "error" && <ErrorMessage message={error?.message} onRetry={reload} />}
+          {status === "success" && filteredMissions.length === 0 && (
+            <EmptyMessage message="Nenhuma missão encontrada para este filtro." />
+          )}
+          {status === "success" && filteredMissions.length > 0 && (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {filteredMissions.map((mission) => (
+                <MissionCard key={mission.id} mission={mission} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </main>
