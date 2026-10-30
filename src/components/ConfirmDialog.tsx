@@ -22,9 +22,13 @@ function ConfirmDialog({
 }: ConfirmDialogProps) {
   const cancelarRef = useRef<HTMLButtonElement>(null);
 
+  // Foco no botão "Voltar" ao abrir: a opção segura fica selecionada no teclado
+  useEffect(() => {
+    if (aberto) cancelarRef.current?.focus();
+  }, [aberto]);
+
   useEffect(() => {
     if (!aberto) return;
-    cancelarRef.current?.focus();
     const fecharComEsc = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !carregando) onCancelar();
     };
