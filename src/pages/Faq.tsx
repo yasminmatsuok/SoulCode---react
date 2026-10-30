@@ -1,25 +1,26 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import FaqAccordionItem from "../components/FaqAccordionItem";
+import PageHero from "../components/PageHero";
 import { faqEntries } from "../data/faq";
+import { ROUTES } from "../routes/paths";
 
 function Faq() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
     <main>
-      <section
-        className="bg-hero min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
-      >
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Perguntas <span className="highlight">Frequentes sobre o Avatar</span>
-          </h1>
-          <p className="text-textSecondary text-lg">Tire suas dúvidas sobre o Avatar Inteligente da SoulUp</p>
-        </div>
-      </section>
+      <PageHero
+        titulo={
+          <>
+            Perguntas <span className="highlight">Frequentes</span>
+          </>
+        }
+        subtitulo="Tire suas dúvidas sobre o Avatar Inteligente, os pontos e as recompensas"
+      />
 
-      <section className="py-20 px-8">
-        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+      <section className="py-14 md:py-20 px-4 sm:px-8">
+        <div className="max-w-3xl mx-auto flex flex-col gap-3 sm:gap-4">
           {faqEntries.map((entry) => (
             <FaqAccordionItem
               key={entry.id}
@@ -28,6 +29,12 @@ function Faq() {
               onToggle={() => setActiveId((prev) => (prev === entry.id ? null : entry.id))}
             />
           ))}
+          <p className="text-center text-textSecondary mt-8">
+            Não achou sua resposta?{" "}
+            <Link to={ROUTES.contato} className="text-accent hover:underline rounded">
+              Fale com a gente
+            </Link>
+          </p>
         </div>
       </section>
     </main>

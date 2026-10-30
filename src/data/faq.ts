@@ -1,5 +1,5 @@
 import type { FaqEntry } from "../types";
- 
+
 export const faqEntries: FaqEntry[] = [
   {
     id: "o-que-e",
@@ -24,6 +24,24 @@ export const faqEntries: FaqEntry[] = [
     question: "Como funciona o sistema de pontos?",
     answer:
       "Cada ação sustentável realizada gera pontos que são avaliados pelo sistema. Esses pontos podem ser convertidos em benefícios reais como descontos na conta de energia.",
+  },
+  {
+    id: "converter-pontos",
+    question: "Como converto meus pontos em recompensas?",
+    answer:
+      "Acesse a página Converter, escolha uma recompensa do catálogo e a quantidade. O resumo mostra o custo e o saldo que vai sobrar antes de você confirmar.",
+  },
+  {
+    id: "cancelar-conversao",
+    question: "Posso cancelar uma conversão?",
+    answer:
+      "Sim. Enquanto o pedido estiver pendente, basta abrir o Histórico e clicar em Cancelar. Os pontos voltam na hora para o seu saldo.",
+  },
+  {
+    id: "niveis",
+    question: "Como funcionam os níveis?",
+    answer:
+      "Seu nível é calculado pelos pontos acumulados: Iniciante, Explorador (250), Guardião (750) e Lenda Verde (1.500). Converter pontos não faz você perder nível.",
   },
   {
     id: "publicacoes-automaticas",
