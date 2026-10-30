@@ -7,19 +7,29 @@ interface FaqAccordionItemProps {
 }
 
 function FaqAccordionItem({ entry, isOpen, onToggle }: FaqAccordionItemProps) {
+  const respostaId = `faq-${entry.id}`;
+
   return (
     <div className="bg-bgSecondary border border-borderColor rounded-card overflow-hidden">
-      <button
-        onClick={onToggle}
-        className="w-full flex justify-between items-center text-left px-6 py-5 font-medium bg-transparent border-none cursor-pointer text-textPrimary"
-      >
-        {entry.question}
-        <span className={`text-xl transition-transform ${isOpen ? "rotate-45" : ""}`}>+</span>
-      </button>
+      <h2>
+        <button
+          type="button"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+          aria-controls={respostaId}
+          className="w-full flex justify-between items-center gap-4 text-left px-5 sm:px-6 py-4 sm:py-5 text-sm sm:text-base font-medium text-textPrimary rounded-card"
+        >
+          {entry.question}
+          <span aria-hidden="true" className={`text-xl text-accent transition-transform ${isOpen ? "rotate-45" : ""}`}>
+            +
+          </span>
+        </button>
+      </h2>
       <div
-        className={`px-6 text-textSecondary text-sm transition-all overflow-hidden ${
-          isOpen ? "max-h-40 pb-5" : "max-h-0"
-        }`}
+        id={respostaId}
+        role="region"
+        hidden={!isOpen}
+        className="px-5 sm:px-6 pb-5 text-textSecondary text-sm sm:text-base"
       >
         <p>{entry.answer}</p>
       </div>
