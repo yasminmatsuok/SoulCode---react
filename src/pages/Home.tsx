@@ -29,8 +29,7 @@ function Home() {
   return (
     <main>
       <section
-        className="min-h-screen flex items-center justify-center text-center px-8 pt-24 pb-8"
-        style={{ background: "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)" }}
+        className="bg-hero min-h-screen flex items-center justify-center text-center px-8 pt-24 pb-8"
       >
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
@@ -100,7 +99,6 @@ function Home() {
 
       <section
         className="py-20 px-8 text-center"
-        style={{ background: "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)" }}
       >
         <div className="container-app">
           <h2 className="section-title">
