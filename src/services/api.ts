@@ -81,3 +81,8 @@ export const api = {
   patch: <T>(path: string, body: unknown) => request<T>("PATCH", path, body),
   delete: <T = void>(path: string) => request<T>("DELETE", path),
 };
+
+// Garante que qualquer erro capturado vire um ApiError com mensagem amigável
+export function toApiError(err: unknown): ApiError {
+  return err instanceof ApiError ? err : new ApiError("Ocorreu um erro inesperado. Tente novamente.", -1);
+}
