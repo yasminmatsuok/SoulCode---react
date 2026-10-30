@@ -1,32 +1,32 @@
-import { HashRouter, Routes, Route } from "react-router-dom";import Header from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Sobre from "./pages/Sobre";
-import Avatar from "./pages/Avatar";
-import Missoes from "./pages/Missoes";
-import MissaoDetalhe from "./pages/MissaoDetalhe";
-import Faq from "./pages/Faq";
-import Integrantes from "./pages/Integrantes";
-import Contato from "./pages/Contato";
+import Header from "./components/Header";
+import ScrollToTop from "./components/ScrollToTop";
+import NotificationProvider from "./context/NotificationProvider";
+import SaldoProvider from "./context/SaldoProvider";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <HashRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/avatar" element={<Avatar />} />
-        <Route path="/missoes" element={<Missoes />} />
-        <Route path="/missoes/:id" element={<MissaoDetalhe />} />
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/integrantes" element={<Integrantes />} />
-        <Route path="/contato" element={<Contato />} />
-      </Routes>
-      <Footer />
-    </HashRouter>
+    <BrowserRouter>
+      <NotificationProvider>
+        <SaldoProvider>
+          <ScrollToTop />
+          <a
+            href="#conteudo"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[80] focus:bg-brandPrimary focus:px-4 focus:py-2 focus:rounded-pill"
+          >
+            Pular para o conteúdo
+          </a>
+          <Header />
+          <div id="conteudo" className="min-h-screen">
+            <AppRoutes />
+          </div>
+          <Footer />
+        </SaldoProvider>
+      </NotificationProvider>
+    </BrowserRouter>
   );
-  
 }
 
 export default App;

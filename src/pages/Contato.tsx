@@ -1,77 +1,72 @@
-import { useState } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
+import FormField from "../components/FormField";
+import PageHero from "../components/PageHero";
+import { useNotification } from "../hooks/useNotification";
 import type { ContactFormData } from "../types";
- 
+import { inputClass } from "../utils/formStyles";
+
 const INFO_ITEMS = [
   { icon: "📧", title: "E-mail", text: "contato.soulcode@fiap.com.br" },
   { icon: "📍", title: "Localização", text: "FIAP — Paulista, São Paulo" },
   { icon: "🎓", title: "Curso", text: "Análise e Desenvolvimento de Sistemas" },
   { icon: "📅", title: "Turma", text: "1TDS — Fevereiro 2026" },
 ];
- 
+
 function Contato() {
-  const [showSuccess, setShowSuccess] = useState(false);
+  const { notificar } = useNotification();
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm<ContactFormData>();
- 
-  const onSubmit: SubmitHandler<ContactFormData> = () => {
-    setShowSuccess(true);
+
+  // O formulário de contato não faz parte da API: apenas confirma o envio para o usuário
+  const onSubmit: SubmitHandler<ContactFormData> = ({ name }) => {
+    notificar("success", `Obrigado, ${name.split(" ")[0]}! Sua mensagem foi enviada.`);
     reset();
-    setTimeout(() => setShowSuccess(false), 4000);
   };
- 
-  const inputClass = (hasError: boolean) =>
-    `w-full bg-bgPrimary border rounded-lg px-4 py-3 text-textPrimary focus:outline-none transition-colors ${
-      hasError ? "border-red-400" : "border-borderColor focus:border-brandPrimary"
-    }`;
- 
+
   return (
-<main>
-<section
-        className="min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
-        style={{ background: "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)" }}
->
-<div>
-<h1 className="text-3xl md:text-5xl font-bold mb-4">
+    <main>
+      <PageHero
+        titulo={
+          <>
             Entre em <span className="highlight">Contato</span>
-</h1>
-<p className="text-textSecondary text-lg">Tem alguma dúvida ou sugestão? Fale com a gente!</p>
-</div>
-</section>
- 
-      <section className="py-20 px-8">
-<div className="container-app grid md:grid-cols-2 gap-12">
-<div>
-<h2 className="text-2xl font-bold mb-6">
+          </>
+        }
+        subtitulo="Tem alguma dúvida ou sugestão? Fale com a gente!"
+      />
+
+      <section className="py-14 md:py-20">
+        <div className="container-app grid md:grid-cols-2 gap-10 lg:gap-12">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold mb-6">
               Envie uma <span className="highlight">Mensagem</span>
-</h2>
-<form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
-<div>
-<label htmlFor="name" className="block mb-2 text-sm text-textSecondary">
-                  Nome completo
-</label>
-<input
+            </h2>
+            <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
+              <FormField id="name" label="Nome completo" error={errors.name?.message}>
+                <input
                   id="name"
                   type="text"
+                  autoComplete="name"
                   placeholder="Seu nome completo"
+                  aria-invalid={!!errors.name}
                   className={inputClass(!!errors.name)}
-                  {...register("name", { required: "Por favor, insira seu nome completo." })}
+                  {...register("name", {
+                    required: "Por favor, insira seu nome completo.",
+                    minLength: { value: 3, message: "O nome precisa ter pelo menos 3 caracteres." },
+                  })}
                 />
-                {errors.name && <span className="text-red-400 text-xs mt-1 block">{errors.name.message}</span>}
-</div>
- 
-              <div>
-<label htmlFor="email" className="block mb-2 text-sm text-textSecondary">
-                  E-mail
-</label>
-<input
+              </FormField>
+
+              <FormField id="email" label="E-mail" error={errors.email?.message}>
+                <input
                   id="email"
                   type="email"
+                  autoComplete="email"
                   placeholder="seu@email.com"
+                  aria-invalid={!!errors.email}
                   className={inputClass(!!errors.email)}
                   {...register("email", {
                     required: "Por favor, insira um e-mail válido.",
@@ -81,67 +76,61 @@ function Contato() {
                     },
                   })}
                 />
-                {errors.email && <span className="text-red-400 text-xs mt-1 block">{errors.email.message}</span>}
-</div>
- 
-              <div>
-<label htmlFor="subject" className="block mb-2 text-sm text-textSecondary">
-                  Assunto
-</label>
-<input
+              </FormField>
+
+              <FormField id="subject" label="Assunto" error={errors.subject?.message}>
+                <input
                   id="subject"
                   type="text"
                   placeholder="Assunto da mensagem"
+                  aria-invalid={!!errors.subject}
                   className={inputClass(!!errors.subject)}
                   {...register("subject", { required: "Por favor, insira o assunto da sua mensagem." })}
                 />
-                {errors.subject && <span className="text-red-400 text-xs mt-1 block">{errors.subject.message}</span>}
-</div>
- 
-              <div>
-<label htmlFor="message" className="block mb-2 text-sm text-textSecondary">
-                  Mensagem
-</label>
-<textarea
+              </FormField>
+
+              <FormField id="message" label="Mensagem" error={errors.message?.message}>
+                <textarea
                   id="message"
                   rows={5}
                   placeholder="Escreva sua mensagem aqui..."
+                  aria-invalid={!!errors.message}
                   className={inputClass(!!errors.message)}
-                  {...register("message", { required: "Por favor, escreva sua mensagem." })}
+                  {...register("message", {
+                    required: "Por favor, escreva sua mensagem.",
+                    minLength: { value: 10, message: "A mensagem precisa ter pelo menos 10 caracteres." },
+                  })}
                 />
-                {errors.message && <span className="text-red-400 text-xs mt-1 block">{errors.message.message}</span>}
-</div>
- 
-              <button type="submit" className="btn-primary">
+              </FormField>
+
+              <button type="submit" className="btn-primary self-start">
                 Enviar Mensagem
-</button>
- 
-              {showSuccess && (
-<div className="text-green-400 text-sm mt-2">✅ Mensagem enviada com sucesso!</div>
-              )}
-</form>
-</div>
- 
+              </button>
+            </form>
+          </div>
+
           <div>
-<h2 className="text-2xl font-bold mb-6">
+            <h2 className="text-xl sm:text-2xl font-bold mb-6">
               Nossas <span className="highlight">Informações</span>
-</h2>
-<div className="flex flex-col gap-6">
+            </h2>
+            <ul className="flex flex-col gap-6 list-none">
               {INFO_ITEMS.map((item) => (
-<div key={item.title} className="flex gap-4 items-start">
-<div className="text-2xl">{item.icon}</div>
-<div>
-<h3 className="font-semibold mb-1">{item.title}</h3>
-<p className="text-textSecondary text-sm">{item.text}</p>
-</div>
-</div>
+                <li key={item.title} className="flex gap-4 items-start">
+                  <span className="text-2xl" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold mb-1">{item.title}</h3>
+                    <p className="text-textSecondary text-sm break-words">{item.text}</p>
+                  </div>
+                </li>
               ))}
-</div>
-</div>
-</div>
-</section>
-</main>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
- 
+
 export default Contato;

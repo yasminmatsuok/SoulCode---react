@@ -1,29 +1,21 @@
+import PageHero from "../components/PageHero";
 import TeamCard from "../components/TeamCard";
 import { team } from "../data/team";
 
 function Integrantes() {
   return (
     <main>
-      <section
-        className="min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)",
-        }}
-      >
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+      <PageHero
+        titulo={
+          <>
             Nossa <span className="highlight">Equipe</span>
-          </h1>
+          </>
+        }
+        subtitulo="Conheça as pessoas por trás do projeto SoulCode"
+      />
 
-          <p className="text-textSecondary text-lg">
-            Conheça as pessoas por trás do projeto SoulCode
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 px-8">
-        <div className="container-app grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <section className="py-14 md:py-20">
+        <div className="container-app grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {team.map((member) => (
             <TeamCard key={member.id} member={member} />
           ))}

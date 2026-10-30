@@ -1,4 +1,9 @@
-﻿node_modules
+node_modules
 dist
 .vite
+.vercel
+
+# variáveis de ambiente
 .env
+.env.local
+.env.*.local
