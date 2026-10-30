@@ -16,8 +16,14 @@ function MissaoDetalhe() {
   if (!mission) {
     return (
       <main className="min-h-screen flex flex-col items-center justify-center px-8 text-center pt-32">
-        <h1 className="text-2xl font-bold mb-4">Missão não encontrada</h1>
-        <button onClick={() => navigate("/missoes")} className="btn-primary">
+        <h1 className="text-2xl font-bold mb-4">
+          Missão não encontrada
+        </h1>
+
+        <button
+          onClick={() => navigate("/missoes")}
+          className="btn-primary"
+        >
           Voltar para Missões
         </button>
       </main>
@@ -31,23 +37,32 @@ function MissaoDetalhe() {
           onClick={() => navigate("/missoes")}
           className="text-textSecondary hover:text-accent text-sm mb-8 inline-block"
         >
-          ← Voltar para Missões
+          ← Voltar para todas as missões
         </button>
 
-        <div className="bg-bgSecondary border border-borderColor rounded-card p-8">
-          <div className="flex justify-between items-center mb-6">
-            <span className="text-5xl">{mission.icon}</span>
-            <span className="bg-brandPrimary/20 text-brandSecondary rounded-pill px-4 py-1 text-sm font-semibold">
+        <div className="bg-bgSecondary border border-borderColor rounded-xl p-8">
+          <div className="flex items-center justify-between mb-6">
+            <h1 className="text-3xl font-bold">
+              {mission.title}
+            </h1>
+
+            <span className="text-sm px-3 py-1 rounded-full bg-brandPrimary/20 text-brandPrimary">
               {badgeLabels[mission.difficulty]}
             </span>
           </div>
 
-          <h1 className="text-2xl font-bold mb-4">{mission.title}</h1>
-          <p className="text-textSecondary mb-6">{mission.longDescription}</p>
+          <p className="text-textSecondary mb-6">
+            {mission.description}
+          </p>
 
-          <div className="flex justify-between items-center border-t border-borderColor pt-6">
-            <span className="text-accent font-bold text-xl">+{mission.points} pts</span>
-            <button className="btn-primary">Confirmar Início</button>
+          <div className="flex items-center justify-between">
+            <span className="text-textSecondary">
+              Pontos
+            </span>
+
+            <span className="font-bold text-lg">
+              {mission.points} pontos
+            </span>
           </div>
         </div>
       </div>
@@ -56,3 +71,4 @@ function MissaoDetalhe() {
 }
 
 export default MissaoDetalhe;
+

@@ -59,7 +59,7 @@ function Contato() {
                   type="text"
                   placeholder="Seu nome completo"
                   className={inputClass(!!errors.name)}
-                  {...register("name", { required: "Por favor, insira seu nome." })}
+                  {...register("name", { required: "Por favor, insira seu nome completo." })}
                 />
                 {errors.name && <span className="text-red-400 text-xs mt-1 block">{errors.name.message}</span>}
 </div>
@@ -93,7 +93,7 @@ function Contato() {
                   type="text"
                   placeholder="Assunto da mensagem"
                   className={inputClass(!!errors.subject)}
-                  {...register("subject", { required: "Por favor, insira o assunto." })}
+                  {...register("subject", { required: "Por favor, insira o assunto da sua mensagem." })}
                 />
                 {errors.subject && <span className="text-red-400 text-xs mt-1 block">{errors.subject.message}</span>}
 </div>

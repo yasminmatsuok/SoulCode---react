@@ -6,10 +6,10 @@ Evolução do site estático (HTML/CSS/JS) das sprints anteriores para uma
 
 ## Descrição do projeto
 
-A SoulUp é uma plataforma digital que transforma interações online em
-benefícios reais para os usuários e impacto positivo para o planeta, através
-de um **Avatar Inteligente** que sugere ações sustentáveis, acompanha missões
-e gera recompensas. Este repositório contém o front-end da aplicação.
+A SoulUp é uma plataforma digital que conecta pessoas a ações sustentáveis do dia a dia,
+recompensando boas práticas com benefícios reais. Este projeto apresenta o Avatar Inteligente,
+um assistente que acompanha o usuário, sugere missões e acompanha o progresso de cada um rumo
+a um estilo de vida mais consciente.
 
 ## Tecnologias utilizadas
 
@@ -69,8 +69,8 @@ A aplicação sobe por padrão em `http://localhost:5173`.
 
 ## Integrantes do grupo
 
-- Yasmin de Oliveira Matsuok — RM573083 — Front-End Design Engineering
-- Murilo Gomes Santiago Carnaval — RM573067 — Database Administrator
 - Davi Trindade Ribeiro — RM571336 — Backend Developer - Java & Python
-- Yasmin Cappi Santos — RM571926 — Documentation, UX Writing & Pitch
 - Maria Vitória Cândida Carvalho — RM570850 — Artificial Intelligence & Chatbot
+- Murilo Gomes Santiago Carnaval — RM573067 — Database Administrator
+- Yasmin Cappi Santos — RM571926 — Documentation, UX Writing & Pitch
+- Yasmin de Oliveira Matsuok — RM573083 — Front-End Design Engineering

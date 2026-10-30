@@ -5,7 +5,8 @@ export const missions: Mission[] = [
     id: "transporte-publico",
     icon: "🚌",
     title: "Use Transporte Público",
-    description: "Utilize o transporte público por 5 dias seguidos e registre suas viagens.",
+    description:
+      "Utilize o transporte público por 5 dias seguidos e registre suas viagens.",
     points: 50,
     difficulty: "facil",
     longDescription:
@@ -15,7 +16,8 @@ export const missions: Mission[] = [
     id: "reciclagem",
     icon: "♻️",
     title: "Recicle seu Lixo",
-    description: "Separe o lixo corretamente por uma semana e tire uma foto como prova.",
+    description:
+      "Separe o lixo corretamente por uma semana e tire uma foto como prova.",
     points: 30,
     difficulty: "facil",
     longDescription:
@@ -25,7 +27,8 @@ export const missions: Mission[] = [
     id: "economia-energia",
     icon: "💡",
     title: "Economize Energia",
-    description: "Reduza o consumo de energia em 20% comparado ao mês anterior.",
+    description:
+      "Reduza o consumo de energia em 20% comparado ao mês anterior.",
     points: 80,
     difficulty: "medio",
     longDescription:
@@ -35,7 +38,8 @@ export const missions: Mission[] = [
     id: "plantar-muda",
     icon: "🌱",
     title: "Plante uma Muda",
-    description: "Plante uma muda de árvore ou planta e documente o processo.",
+    description:
+      "Plante uma muda de árvore ou planta e documente o processo.",
     points: 100,
     difficulty: "medio",
     longDescription:
@@ -45,7 +49,8 @@ export const missions: Mission[] = [
     id: "sem-carro",
     icon: "🚲",
     title: "30 Dias sem Carro",
-    description: "Passe 30 dias utilizando apenas transporte público, bicicleta ou caminhada.",
+    description:
+      "Passe 30 dias utilizando apenas transporte público, bicicleta ou caminhada.",
     points: 200,
     difficulty: "dificil",
     longDescription:
@@ -55,7 +60,8 @@ export const missions: Mission[] = [
     id: "energia-solar",
     icon: "☀️",
     title: "Energia Solar",
-    description: "Instale um painel solar ou utilize energia renovável por 30 dias.",
+    description:
+      "Instale um painel solar ou utilize energia renovável por 30 dias.",
     points: 300,
     difficulty: "dificil",
     longDescription:

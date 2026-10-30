@@ -19,7 +19,7 @@ const CARDS = [
 ];
 
 const STATS = [
-  { value: "61.242", label: "Usuários" },
+  { value: "67.108", label: "Usuários" },
   { value: "183.057", label: "Eventos" },
   { value: "9.599", label: "Usuários Ativos" },
   { value: "15.572", label: "Sessões" },
@@ -45,7 +45,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-8 bg-bgSecondary text-center">
+      <section className="py-24 px-8 bg-bgSecondary text-center">
         <div className="container-app">
           <h2 className="section-title">
             Como <span className="highlight">Funciona</span>

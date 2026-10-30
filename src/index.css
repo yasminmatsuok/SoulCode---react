@@ -42,4 +42,6 @@
   .container-app {
     @apply max-w-6xl mx-auto px-8;
   }
+  .card-hover {
+    @apply transition-all hover:-translate-y-1;}
 }

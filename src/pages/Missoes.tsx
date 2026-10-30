@@ -13,7 +13,7 @@ const FILTERS: { label: string; value: FilterValue }[] = [
 ];
 
 const PROGRESS = [
-  { value: "450", label: "Pontos Acumulados" },
+  { value: "500", label: "Pontos Acumulados" },
   { value: "5", label: "Missões Completas" },
   { value: "3", label: "Missões Pendentes" },
   { value: "Nível 3", label: "Explorador" },

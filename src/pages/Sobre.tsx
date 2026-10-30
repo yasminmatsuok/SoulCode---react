@@ -21,7 +21,7 @@ const ROADMAP = [
   {
     number: "03",
     title: "Sprint 4",
-    text: "Testes, ajustes finais, integração completa e apresentação para a banca avaliadora.",
+    text: "Testes finais, refinamentos, integração completa do projeto e preparação para apresentação à banca avaliadora.",
   },
 ];
 
