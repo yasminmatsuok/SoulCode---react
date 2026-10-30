@@ -5,11 +5,7 @@ function Integrantes() {
   return (
     <main>
       <section
-        className="min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, #1a1535 0%, #0A0A0F 70%)",
-        }}
+        className="bg-hero min-h-[40vh] flex items-center justify-center text-center px-8 pt-32 pb-16"
       >
         <div>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
