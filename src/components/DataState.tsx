@@ -13,7 +13,7 @@ interface DataStateProps {
   error: ApiError | null;
   onRetry: () => void;
   loadingLabel: string;
-  empty: EmptyConfig;
+  empty?: EmptyConfig; // telas de detalhe não têm estado vazio
   children: ReactNode;
 }
 
@@ -59,7 +59,7 @@ function DataState({ status, error, onRetry, loadingLabel, empty, children }: Da
     );
   }
 
-  if (status === "empty") {
+  if (status === "empty" && empty) {
     return (
       <div className="mx-auto max-w-lg text-center bg-bgSecondary border border-borderColor rounded-card px-6 py-10 md:px-10">
         <div className="text-4xl mb-4" aria-hidden="true">
