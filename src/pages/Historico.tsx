@@ -129,7 +129,9 @@ function Historico() {
                       </p>
                     </div>
                     <span className="font-bold text-amber-300 sm:text-right">− {formatarPontos(conversao.pontosGastos)}</span>
-                    <Badge cor={STATUS_CONVERSAO_COR[conversao.status]}>{STATUS_CONVERSAO_LABEL[conversao.status]}</Badge>
+                    <div>
+                      <Badge cor={STATUS_CONVERSAO_COR[conversao.status]}>{STATUS_CONVERSAO_LABEL[conversao.status]}</Badge>
+                    </div>
                     {conversao.status === "pendente" ? (
                       <button
                         type="button"
