@@ -7,6 +7,8 @@ usuário completa **missões**, acumula **pontos** e os **converte em recompensa
 créditos de transporte, ingressos e mais). Esta SPA em **React + Vite + TypeScript + Tailwind CSS** consome uma
 **API RESTful em Java (Quarkus)** e já funciona com dados mockados enquanto a API não é publicada.
 
+**🔗 Acesse o site: [https://soul-code-react.vercel.app](https://soul-code-react.vercel.app)**
+
 ![Home do SoulCode](docs/img/home.png)
 
 ## Funcionalidades
@@ -153,7 +155,7 @@ Passo a passo completo da integração: [`docs/INTEGRACAO_JAVA.md`](docs/INTEGRA
 | | |
 |---|---|
 | Repositório GitHub | https://github.com/yasminmatsuok/SoulCode---react |
-| Deploy (Vercel) | [INSERIR LINK] |
+| Deploy (Vercel) | https://soul-code-react.vercel.app |
 | Vídeo no YouTube | [INSERIR LINK] |
 | API Java (Quarkus) | [INSERIR LINK] |
 | Contrato da API | [`docs/CONTRATO_API.md`](docs/CONTRATO_API.md) |
