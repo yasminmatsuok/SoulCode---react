@@ -7,7 +7,7 @@ O front já está pronto e funcionando com dados mockados. Quando a API Java che
 Envie o arquivo [`CONTRATO_API.md`](./CONTRATO_API.md) e peça:
 
 - [ ] **Rotas e campos iguais ao contrato** (ou uma lista do que ficou diferente).
-- [ ] **CORS liberado** para `http://localhost:5173` **e** para o domínio da Vercel (`https://SEU-PROJETO.vercel.app`),
+- [ ] **CORS liberado** para `http://localhost:5173` **e** para o domínio da Vercel (`https://soul-code-react.vercel.app`),
       com os métodos `GET, POST, PUT, PATCH, DELETE, OPTIONS` e o header `Content-Type`.
       Sem isso o navegador bloqueia as requisições e o site mostra "Não foi possível conectar ao servidor".
 - [ ] **API publicada em HTTPS** (Render, Railway, Azure etc.). A Vercel é HTTPS e o navegador bloqueia chamadas

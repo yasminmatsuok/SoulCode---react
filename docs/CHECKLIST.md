@@ -78,7 +78,7 @@ Legenda: ✅ pronto · 🙋 depende de você/grupo · ☕ depende da API Java
 |---|---|
 | `vercel.json` com rewrite de SPA | ✅ |
 | `.env.example` no repo e `.env` no `.gitignore` | ✅ |
-| Projeto criado na Vercel + variáveis configuradas | 🙋 |
+| Projeto criado na Vercel + variáveis configuradas | ✅ https://soul-code-react.vercel.app (testado em 360, 768, 992 e 1440px) |
 | Variáveis da API real na Vercel | ☕ |
 
 ## Git / GitHub
@@ -94,6 +94,6 @@ Legenda: ✅ pronto · 🙋 depende de você/grupo · ☕ depende da API Java
 | Requisito | Status |
 |---|---|
 | README com as 7 seções | ✅ |
-| Links da Vercel, do YouTube e da API | 🙋 / ☕ (`[INSERIR LINK]`) |
+| Links da Vercel, do YouTube e da API | ✅ Vercel · 🙋 YouTube · ☕ API (`[INSERIR LINK]`) |
 | Vídeo de até 3 min | 🙋 `docs/ROTEIRO_VIDEO.md` |
 | .ZIP sem `node_modules`, < 50MB, pelo Portal do Aluno | 🙋 |
