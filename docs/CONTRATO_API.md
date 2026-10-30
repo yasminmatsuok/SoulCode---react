@@ -37,12 +37,12 @@ Para respostas 4xx, devolver um corpo com a mensagem que o usuário vai ler:
 
 ### CORS (obrigatório)
 
-Liberar as origens `http://localhost:5173` e `https://<projeto>.vercel.app`, métodos
+Liberar as origens `http://localhost:5173` e `https://soul-code-react.vercel.app`, métodos
 `GET, POST, PUT, PATCH, DELETE, OPTIONS` e header `Content-Type`. Exemplo para `application.properties`:
 
 ```properties
 quarkus.http.cors=true
-quarkus.http.cors.origins=http://localhost:5173,https://SEU-PROJETO.vercel.app
+quarkus.http.cors.origins=http://localhost:5173,https://soul-code-react.vercel.app
 quarkus.http.cors.methods=GET,POST,PUT,PATCH,DELETE,OPTIONS
 quarkus.http.cors.headers=Content-Type
 ```
