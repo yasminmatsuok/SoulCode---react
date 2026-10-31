@@ -26,12 +26,15 @@ responsividade, deploy e documentação técnica.
 
 ## Davi Trindade Ribeiro — Integração com o Java
 
+A API (Spring Boot) expõe `/api/status`, `/api/usuarios` (CRUD) e `/api/avatares`. As tarefas abaixo documentam
+essa API no front; o código da página de Usuários fica com o Front-End.
+
 | # | Tarefa | Arquivo(s) | Commit sugerido |
 |---|---|---|---|
-| 1 | Conferir o contrato e registrar o que mudou na API | `docs/CONTRATO_API.md` | `docs: atualiza contrato com a API implementada` |
-| 2 | Ajustar caminhos se diferentes do contrato | `src/config/endpoints.ts` | `fix: alinha endpoints com a API Quarkus` |
-| 3 | Ajustar nomes de campos, se necessário | `src/types/api.ts`, `src/mappers/*` | `fix: ajusta mappers aos campos da API` |
-| 4 | Colocar a URL pública da API no exemplo de env | `.env.example` | `chore: adiciona URL da API publicada no env de exemplo` |
+| 1 | Registrar as rotas reais da API (status, usuários, avatares) | `docs/CONTRATO_API.md` | `docs: atualiza contrato com a API Spring Boot` |
+| 2 | Adicionar exemplos de JSON de usuário e avatar | `docs/CONTRATO_API.md` | `docs: adiciona exemplos de resposta da API` |
+| 3 | Documentar como rodar a API localmente e a configuração de CORS | `docs/INTEGRACAO_JAVA.md` | `docs: explica execução local e CORS da API` |
+| 4 | Colocar a URL pública (HTTPS) da API no exemplo de env | `.env.example` | `chore: adiciona URL da API publicada no env de exemplo` |
 | 5 | Preencher "API Java" no README | `README.md` | `docs: adiciona link da API Java no README` |
 
 ## Murilo Gomes Santiago Carnaval — Dados
