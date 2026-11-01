@@ -147,6 +147,7 @@ npm run dev              # http://localhost:5173
 |---|---|
 | `npm run dev` | servidor de desenvolvimento |
 | `npm run build` | checagem de tipos + build de produção |
+| `npm run build:pages` | build para o GitHub Pages (base `/SoulCode---react/` + `404.html` para as rotas) |
 | `npm run lint` | lint com Oxlint |
 | `npm run preview` | serve o build localmente |
 
@@ -157,6 +158,15 @@ npm run dev              # http://localhost:5173
 3. Faça **Redeploy** sempre que mudar as variáveis.
 4. O `vercel.json` reescreve todas as rotas para `index.html`, então recarregar `/recompensas/1` não dá 404.
 
+### Deploy no GitHub Pages
+
+1. Com o `.env` preenchido, rode `npm run build:pages` (gera o `dist/` com o caminho `/SoulCode---react/`).
+2. Publique o conteúdo de `dist/` na branch `gh-pages`.
+3. No GitHub, em **Settings → Pages**, escolha a branch `gh-pages` e a pasta `/ (root)`.
+4. O `404.html` é uma cópia do `index.html`, então recarregar `/SoulCode---react/recompensas/1` também funciona.
+
+> A API Java também precisa liberar no CORS a origem `https://yasminmatsuok.github.io`.
+
 Passo a passo completo da integração: [`docs/INTEGRACAO_JAVA.md`](docs/INTEGRACAO_JAVA.md).
 
 ### Links
@@ -165,6 +175,7 @@ Passo a passo completo da integração: [`docs/INTEGRACAO_JAVA.md`](docs/INTEGRA
 |---|---|
 | Repositório GitHub | https://github.com/yasminmatsuok/SoulCode---react |
 | Deploy (Vercel) | https://soul-code-react.vercel.app |
+| Deploy (GitHub Pages) | https://yasminmatsuok.github.io/SoulCode---react/ |
 | Vídeo no YouTube | [INSERIR LINK] |
 | API Java (Spring Boot) | https://soulcode-api.onrender.com (ex.: [`/api/usuarios`](https://soulcode-api.onrender.com/api/usuarios)) |
 | Contrato da API | [`docs/CONTRATO_API.md`](docs/CONTRATO_API.md) |
