@@ -22,4 +22,13 @@ export const ENDPOINTS = {
   saldo: {
     porUsuario: (usuarioId: Id) => `/usuarios/${usuarioId}/saldo`,
   },
+  // Rotas já publicadas na API Java (Spring Boot)
+  usuarios: {
+    listar: "/api/usuarios",
+    criar: "/api/usuarios",
+    porId: (id: Id) => `/api/usuarios/${id}`,
+  },
+  avatares: {
+    listar: "/api/avatares",
+  },
 } as const;

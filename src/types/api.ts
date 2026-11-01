@@ -62,3 +62,26 @@ export interface SaldoApi {
 export interface ConclusaoMissaoPayload {
   usuarioId: Id;
 }
+
+// ---- Rotas já publicadas na API Java (Spring Boot): /api/usuarios e /api/avatares ----
+
+export interface UsuarioApi {
+  id: Id;
+  nome: string;
+  email: string;
+  senhaHash?: string; // a API devolve, mas o front nunca exibe
+  idade: number;
+  cidade: string;
+  interesse: string;
+  pontos: number;
+}
+
+// No POST e no PUT a API espera "senha" (ela mesma gera o hash)
+export type UsuarioPayload = Omit<UsuarioApi, "id" | "senhaHash" | "pontos"> & { senha: string };
+
+export interface AvatarApi {
+  id: Id;
+  nome: string;
+  nivel: number;
+  usuario: Pick<UsuarioApi, "id" | "nome"> | null;
+}

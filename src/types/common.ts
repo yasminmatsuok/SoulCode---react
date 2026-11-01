@@ -9,5 +9,6 @@ export type HttpMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 // Formato de erro que a API pode devolver no corpo (400, 404, 500...)
 export interface ApiErrorBody {
   mensagem?: string;
+  erro?: string; // formato usado pela API Spring Boot
   message?: string;
 }

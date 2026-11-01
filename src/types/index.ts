@@ -3,5 +3,6 @@ export type * from "./missao";
 export type * from "./recompensa";
 export type * from "./conversao";
 export type * from "./saldo";
+export type * from "./usuario";
 export type * from "./api";
 export type * from "./ui";

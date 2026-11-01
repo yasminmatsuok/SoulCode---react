@@ -33,7 +33,7 @@ export function mensagemPorStatus(status: number): string {
 async function lerMensagemDoServidor(response: Response): Promise<string | undefined> {
   try {
     const body = (await response.json()) as ApiErrorBody;
-    return body.mensagem ?? body.message;
+    return body.mensagem ?? body.erro ?? body.message;
   } catch {
     return undefined;
   }
