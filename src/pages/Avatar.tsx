@@ -49,7 +49,7 @@ function Avatar() {
         <div className="container-app grid lg:grid-cols-[300px_1fr] gap-8">
           <div className="text-center">
             <div className="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full bg-bgSecondary border-2 border-brandPrimary flex items-center justify-center mb-4 overflow-hidden">
-              <img src="/favicon.png" alt="Ilustração do Soul, o avatar da SoulUp" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
+              <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="Ilustração do Soul, o avatar da SoulUp" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
             </div>
             <h2 className="text-xl font-bold">Soul</h2>
             <p className="text-accent text-sm mb-4">● Online</p>
