@@ -6,7 +6,7 @@ cena 6). Não aperte F5 durante a gravação se estiver no mock, porque os dados
 | Tempo | Cena | O que mostrar e falar |
 |---|---|---|
 | 0:00–0:15 | **Abertura** | Home. "Somos o grupo SoulCode. Nossa solução transforma ações sustentáveis em pontos que o usuário converte em recompensas reais." Mostre o saldo no header. |
-| 0:15–0:35 | **Tecnologias** | Página Sobre. "React com Vite e TypeScript, estilização só com Tailwind, rotas com React Router, requisições com fetch nativo e API RESTful em Java com Quarkus." |
+| 0:15–0:35 | **Tecnologias** | Página Sobre. "React com Vite e TypeScript, estilização só com Tailwind, rotas com React Router, requisições com fetch nativo e API RESTful em Java com Spring Boot." |
 | 0:35–1:05 | **Missões (CRUD)** | Missões → filtro por dificuldade → abrir uma missão (mostre a URL `/missoes/1`, rota dinâmica) → **Concluir missão** (toast e saldo sobe) → **Nova missão**: enviar vazio para mostrar a validação, preencher e salvar → editar → excluir com o modal de confirmação. |
 | 1:05–1:30 | **Recompensas** | Catálogo: busca, categoria, "só o que posso resgatar". Abrir uma → **Desativar/Ativar** (PATCH) → "Converter agora". |
 | 1:30–1:55 | **Conversão** | Tela Converter: trocar a quantidade e mostrar o resumo "saldo após". Pôr uma quantidade alta para mostrar "Saldo insuficiente". Confirmar → redireciona para o Histórico com toast. |

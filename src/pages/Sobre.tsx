@@ -5,7 +5,7 @@ const TECHS = [
   { icon: "🔷", title: "TypeScript", text: "Tipos, interfaces, union e intersection types" },
   { icon: "🎨", title: "Tailwind CSS", text: "Estilização utilitária e responsiva" },
   { icon: "🧭", title: "React Router", text: "Rotas estáticas, dinâmicas e redirecionamentos" },
-  { icon: "☕", title: "Java + Quarkus", text: "API RESTful com as regras de negócio" },
+  { icon: "☕", title: "Java + Spring Boot", text: "API RESTful com as regras de negócio" },
   { icon: "🗄️", title: "Oracle DB", text: "Banco de dados relacional" },
 ];
 
