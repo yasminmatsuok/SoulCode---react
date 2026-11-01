@@ -5,7 +5,8 @@ Projeto da disciplina **Front-End Design Engineering** (FIAP) — Sprint 4.
 A **SoulUp** é uma plataforma que conecta pessoas a ações sustentáveis do dia a dia. Com o **Avatar Inteligente**, o
 usuário completa **missões**, acumula **pontos** e os **converte em recompensas reais** (descontos na conta de luz,
 créditos de transporte, ingressos e mais). Esta SPA em **React + Vite + TypeScript + Tailwind CSS** consome uma
-**API RESTful em Java (Quarkus)** e já funciona com dados mockados enquanto a API não é publicada.
+**API RESTful em Java (Spring Boot)** publicada no Render: a página **Usuários** faz CRUD completo na API real, e as
+demais telas usam dados mockados até o back-end ganhar essas rotas.
 
 **🔗 Acesse o site: [https://soul-code-react.vercel.app](https://soul-code-react.vercel.app)**
 
@@ -18,6 +19,8 @@ créditos de transporte, ingressos e mais). Esta SPA em **React + Vite + TypeScr
   ativar/desativar (PATCH) e excluir com confirmação.
 - **Converter pontos** — escolhe a recompensa e a quantidade, mostra o resumo do saldo e valida saldo e estoque.
 - **Histórico** — conversões do usuário com filtro por status e cancelamento (estorno dos pontos).
+- **Usuários (API Java real)** — listagem com busca e ordenação (`GET /api/usuarios`), detalhe (`/usuarios/:id`),
+  cadastro (`POST`), edição (`PUT`) e exclusão (`DELETE`), além da lista de avatares (`GET /api/avatares`).
 - **Saldo sempre visível** no header via `useContext`, toasts de feedback, 404 personalizada e menu hambúrguer.
 
 ## Tecnologias utilizadas
@@ -32,7 +35,7 @@ créditos de transporte, ingressos e mais). Esta SPA em **React + Vite + TypeScr
 | `fetch` nativo | requisições HTTP (sem Axios) |
 | Oxlint | lint (`npm run lint`) |
 | Vercel | deploy |
-| Java + Quarkus *(outra integrante)* | API RESTful |
+| Java + Spring Boot *(back-end do grupo)* | API RESTful publicada no Render |
 
 ## Estrutura de pastas
 
@@ -60,13 +63,18 @@ docs/
 ### Como a integração foi organizada
 
 ```
+Página -> usuarioService ----------------------------------> services/api.ts (fetch) -> API Java (Render)
 Página -> service (missaoService, recompensaService...) -> VITE_USE_MOCK?
                                                    ├─ true  -> src/mocks (em memória)
                                                    └─ false -> services/api.ts (fetch) -> API Java
           <- mapper (JSON da API -> tipo do front) <-
 ```
 
-Os componentes nunca sabem se os dados vêm do mock ou da API. Para trocar, basta mudar o `.env`.
+Os componentes nunca sabem se os dados vêm do mock ou da API. Usuários e avatares já existem na API Java e sempre
+usam a API real; missões, recompensas e conversões continuam no mock até o back-end publicar essas rotas.
+
+> A API usa o plano gratuito do Render, que "dorme" quando fica sem uso: a primeira requisição pode levar até 1
+> minuto. O front espera até 60 s e mostra uma mensagem enquanto conecta.
 
 ## Rotas
 
@@ -77,6 +85,7 @@ Os componentes nunca sabem se os dados vêm do mock ou da API. Para trocar, bast
 | `/recompensas` · `/recompensas/nova` · `/recompensas/:id` · `/recompensas/:id/editar` | CRUD de recompensas |
 | `/converter` | Conversão de pontos (aceita `?recompensa=ID`) |
 | `/historico` | Histórico de conversões |
+| `/usuarios` · `/usuarios/novo` · `/usuarios/:id` · `/usuarios/:id/editar` | CRUD de usuários (API Java real) |
 | `/avatar` | Avatar Inteligente (chat) |
 | `/sobre` · `/faq` · `/integrantes` · `/contato` | Institucionais |
 | `*` | 404 personalizada |
@@ -125,8 +134,8 @@ npm run dev              # http://localhost:5173
 
 | Variável | Exemplo | Descrição |
 |---|---|---|
-| `VITE_API_URL` | `https://api-soulcode.exemplo.com` | URL base da API Java (sem barra no final) |
-| `VITE_USE_MOCK` | `true` | `true` usa os mocks; `false` chama a API real |
+| `VITE_API_URL` | `https://soulcode-api.onrender.com` | URL base da API Java (sem barra no final) |
+| `VITE_USE_MOCK` | `true` | missões, recompensas e conversões: `true` usa os mocks; `false` chama a API (usuários sempre usam a API) |
 | `VITE_USUARIO_ID` | `1` | usuário usado enquanto não há login |
 | `VITE_MOCK_ERROR_RATE` | `0` | só no mock: chance de erro 500 simulado (ex.: `0.3`) para testar as telas de erro |
 
@@ -157,7 +166,7 @@ Passo a passo completo da integração: [`docs/INTEGRACAO_JAVA.md`](docs/INTEGRA
 | Repositório GitHub | https://github.com/yasminmatsuok/SoulCode---react |
 | Deploy (Vercel) | https://soul-code-react.vercel.app |
 | Vídeo no YouTube | [INSERIR LINK] |
-| API Java (Quarkus) | [INSERIR LINK] |
+| API Java (Spring Boot) | https://soulcode-api.onrender.com (ex.: [`/api/usuarios`](https://soulcode-api.onrender.com/api/usuarios)) |
 | Contrato da API | [`docs/CONTRATO_API.md`](docs/CONTRATO_API.md) |
 
 ## Contato
