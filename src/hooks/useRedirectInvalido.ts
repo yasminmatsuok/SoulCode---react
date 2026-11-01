@@ -10,11 +10,12 @@ interface RedirectInvalidoParams {
   idBruto: string;
   error: ApiError | null;
   entidade: string; // ex.: "Recompensa"
+  masculino?: boolean; // concordância da mensagem ("encontrado" x "encontrada")
   destino: RoutePath;
 }
 
 // Id inválido na URL ou item inexistente (404): volta para a listagem com uma mensagem personalizada
-export function useRedirectInvalido({ id, idBruto, error, entidade, destino }: RedirectInvalidoParams) {
+export function useRedirectInvalido({ id, idBruto, error, entidade, destino, masculino = false }: RedirectInvalidoParams) {
   const navigate = useNavigate();
   const { notificar } = useNotification();
   const redirecionou = useRef(false);
@@ -27,8 +28,10 @@ export function useRedirectInvalido({ id, idBruto, error, entidade, destino }: R
     const mensagem =
       id === null
         ? `"${idBruto}" não é um código válido de ${entidade.toLowerCase()}.`
-        : `${entidade} #${id} não foi encontrada. Ela pode ter sido excluída.`;
+        : masculino
+          ? `${entidade} #${id} não foi encontrado. Ele pode ter sido excluído.`
+          : `${entidade} #${id} não foi encontrada. Ela pode ter sido excluída.`;
     notificar("error", mensagem);
     navigate(destino, { replace: true });
-  }, [id, idBruto, naoEncontrado, entidade, destino, navigate, notificar]);
+  }, [id, idBruto, naoEncontrado, entidade, destino, masculino, navigate, notificar]);
 }
