@@ -155,7 +155,7 @@ function UsuarioForm() {
               <input
                 id="idade"
                 type="number"
-                min={10}
+                min={12}
                 max={120}
                 inputMode="numeric"
                 aria-invalid={!!errors.idade}
@@ -163,7 +163,7 @@ function UsuarioForm() {
                 {...register("idade", {
                   valueAsNumber: true,
                   required: "Informe a idade.",
-                  min: { value: 10, message: "A idade mínima é 10 anos." },
+                  min: { value: 12, message: "A idade mínima é 12 anos." },
                   max: { value: 120, message: "Digite uma idade válida." },
                   validate: (v) => Number.isInteger(v) || "Use um número inteiro.",
                 })}
