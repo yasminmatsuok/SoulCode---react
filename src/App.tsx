@@ -8,7 +8,8 @@ import AppRoutes from "./routes/AppRoutes";
 
 function App() {
   return (
-    <BrowserRouter>
+    // basename: "/" na Vercel e "/SoulCode---react/" no GitHub Pages (definido pelo --base do build)
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <NotificationProvider>
         <SaldoProvider>
           <ScrollToTop />
