@@ -15,6 +15,9 @@ import RecompensaDetalhe from "../pages/RecompensaDetalhe";
 import RecompensaForm from "../pages/RecompensaForm";
 import Recompensas from "../pages/Recompensas";
 import Sobre from "../pages/Sobre";
+import UsuarioDetalhe from "../pages/UsuarioDetalhe";
+import UsuarioForm from "../pages/UsuarioForm";
+import Usuarios from "../pages/Usuarios";
 import { ROUTES, type RoutePath } from "./paths";
 
 interface AppRoute {
@@ -40,6 +43,10 @@ const APP_ROUTES: AppRoute[] = [
   { path: ROUTES.recompensaEditar, element: <RecompensaForm /> },
   { path: ROUTES.converter, element: <Converter /> },
   { path: ROUTES.historico, element: <Historico /> },
+  { path: ROUTES.usuarios, element: <Usuarios /> },
+  { path: ROUTES.usuarioNovo, element: <UsuarioForm /> },
+  { path: ROUTES.usuarioDetalhe, element: <UsuarioDetalhe /> },
+  { path: ROUTES.usuarioEditar, element: <UsuarioForm /> },
   { path: ROUTES.notFound, element: <NotFound /> },
 ];
 

@@ -11,6 +11,7 @@ export const NAV_LINKS: NavLinkItem[] = [
   { to: ROUTES.recompensas, label: "Recompensas" },
   { to: ROUTES.converter, label: "Converter" },
   { to: ROUTES.historico, label: "Histórico" },
+  { to: ROUTES.usuarios, label: "Usuários" },
   { to: ROUTES.avatar, label: "Avatar" },
   { to: ROUTES.sobre, label: "Sobre" },
   { to: ROUTES.faq, label: "FAQ" },

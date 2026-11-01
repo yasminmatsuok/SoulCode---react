@@ -16,6 +16,10 @@ export const ROUTES = {
   recompensaNova: "/recompensas/nova",
   recompensaDetalhe: "/recompensas/:id",
   recompensaEditar: "/recompensas/:id/editar",
+  usuarios: "/usuarios",
+  usuarioNovo: "/usuarios/novo",
+  usuarioDetalhe: "/usuarios/:id",
+  usuarioEditar: "/usuarios/:id/editar",
   converter: "/converter",
   historico: "/historico",
   notFound: "*",
@@ -30,5 +34,7 @@ export const buildPath = {
   missaoEditar: (id: Id) => `/missoes/${id}/editar`,
   recompensaDetalhe: (id: Id) => `/recompensas/${id}`,
   recompensaEditar: (id: Id) => `/recompensas/${id}/editar`,
+  usuarioDetalhe: (id: Id) => `/usuarios/${id}`,
+  usuarioEditar: (id: Id) => `/usuarios/${id}/editar`,
   converterRecompensa: (id: Id) => `/converter?recompensa=${id}`,
 };

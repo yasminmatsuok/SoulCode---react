@@ -1,4 +1,4 @@
-import type { CategoriaRecompensa, Dificuldade, StatusConversao } from "../types";
+import type { CategoriaRecompensa, Dificuldade, Interesse, StatusConversao } from "../types";
 
 // Textos e cores de cada valor dos union types (Record garante que nenhum valor fique de fora)
 export const DIFICULDADE_LABEL: Record<Dificuldade, string> = {
@@ -35,3 +35,4 @@ export const STATUS_CONVERSAO_COR: Record<StatusConversao, string> = {
 
 export const ICONES_MISSAO = ["🌍", "🚌", "♻️", "💡", "🌱", "🚲", "☀️", "💧", "🛍️", "🥕"];
 export const ICONES_RECOMPENSA = ["🎁", "💡", "🚌", "🥗", "🎬", "🚲", "🌳", "☀️", "☕", "🎟️"];
+export const INTERESSES: Interesse[] = ["Reciclagem", "Energia", "Transporte", "Alimentação", "Água"];
