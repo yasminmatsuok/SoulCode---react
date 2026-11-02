@@ -85,7 +85,7 @@ function UsuarioForm() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
           {isEdit ? "Editar" : "Novo"} <span className="highlight">usuário</span>
         </h1>
-        <p className="text-textSecondary mb-8">Campos com * são obrigatórios. Os dados são salvos na API Java.</p>
+        <p className="text-textSecondary mb-8">Preencha os campos com * (obrigatórios). Seus dados ficam salvos com segurança na nossa API Java.</p>
 
         <DataState
           status={status}
@@ -108,8 +108,8 @@ function UsuarioForm() {
                   aria-invalid={!!errors.nome}
                   className={inputClass(!!errors.nome)}
                   {...register("nome", {
-                    required: "Informe o nome.",
-                    minLength: { value: 3, message: "O nome precisa ter pelo menos 3 caracteres." },
+                    required: "Conte pra gente o seu nome.",
+                    minLength: { value: 3, message: "O nome precisa ter pelo menos 3 letras." },
                     maxLength: { value: 100, message: "O nome pode ter no máximo 100 caracteres." },
                     validate: (v) => v.trim().length >= 3 || "O nome não pode ficar em branco.",
                   })}
@@ -126,8 +126,8 @@ function UsuarioForm() {
                 aria-invalid={!!errors.email}
                 className={inputClass(!!errors.email)}
                 {...register("email", {
-                  required: "Informe o e-mail.",
-                  pattern: { value: EMAIL_REGEX, message: "Digite um e-mail válido." },
+                  required: "Informe um e-mail para contato.",
+                  pattern: { value: EMAIL_REGEX, message: "Esse e-mail parece incompleto. Exemplo: voce@email.com" },
                 })}
               />
             </FormField>
@@ -136,7 +136,7 @@ function UsuarioForm() {
               id="senha"
               label="Senha *"
               error={errors.senha?.message}
-              hint={isEdit ? "Por segurança, digite a senha novamente para salvar." : "Mínimo de 6 caracteres."}
+              hint={isEdit ? "Por segurança, digite a senha de novo para salvar as alterações." : "Use pelo menos 6 caracteres."}
             >
               <input
                 id="senha"
@@ -146,7 +146,7 @@ function UsuarioForm() {
                 className={inputClass(!!errors.senha)}
                 {...register("senha", {
                   required: "Informe a senha.",
-                  minLength: { value: 6, message: "A senha precisa ter pelo menos 6 caracteres." },
+                  minLength: { value: 6, message: "A senha está curta: use pelo menos 6 caracteres." },
                 })}
               />
             </FormField>
@@ -155,7 +155,7 @@ function UsuarioForm() {
               <input
                 id="idade"
                 type="number"
-                min={12}
+                min={10}
                 max={120}
                 inputMode="numeric"
                 aria-invalid={!!errors.idade}
@@ -163,7 +163,7 @@ function UsuarioForm() {
                 {...register("idade", {
                   valueAsNumber: true,
                   required: "Informe a idade.",
-                  min: { value: 12, message: "A idade mínima é 12 anos." },
+                  min: { value: 10, message: "A idade mínima é 10 anos." },
                   max: { value: 120, message: "Digite uma idade válida." },
                   validate: (v) => Number.isInteger(v) || "Use um número inteiro.",
                 })}
@@ -190,7 +190,7 @@ function UsuarioForm() {
                 <select
                   id="interesse"
                   className={inputClass(!!errors.interesse)}
-                  {...register("interesse", { required: "Escolha um interesse." })}
+                  {...register("interesse", { required: "Escolha o tema que mais combina com você." })}
                 >
                   {INTERESSES.map((interesse) => (
                     <option key={interesse} value={interesse}>
