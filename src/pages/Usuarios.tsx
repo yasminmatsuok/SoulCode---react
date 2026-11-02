@@ -99,8 +99,8 @@ function Usuarios() {
             onRetry={recarregar}
             loadingLabel={LOADING_API}
             empty={{
-              titulo: "Nenhum usuário cadastrado",
-              mensagem: "A API ainda não tem usuários. Cadastre o primeiro!",
+              titulo: "Ainda não temos ninguém por aqui",
+              mensagem: "Seja a primeira pessoa da comunidade SoulCode: cadastre um usuário e comece a somar pontos!",
               acao: (
                 <Link to={ROUTES.usuarioNovo} className="btn-primary">
                   Cadastrar usuário
@@ -109,7 +109,7 @@ function Usuarios() {
             }}
           >
             {visiveis.length === 0 ? (
-              <p className="text-center text-textSecondary py-10">Nenhum usuário encontrado com essa busca.</p>
+              <p className="text-center text-textSecondary py-10">Nenhum usuário com esse nome ou e-mail. Confira a digitação ou tente outra busca.</p>
             ) : (
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
                 {visiveis.map((usuario) => (
@@ -131,7 +131,7 @@ function Usuarios() {
             error={avatares.error}
             onRetry={avatares.recarregar}
             loadingLabel="Carregando avatares..."
-            empty={{ titulo: "Nenhum avatar criado", mensagem: "Os avatares aparecem aqui assim que forem criados na API." }}
+            empty={{ titulo: "Nenhum avatar por enquanto", mensagem: "Quando um usuário criar o seu avatar, ele vai aparecer aqui." }}
           >
             <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {(avatares.data ?? []).map((avatar) => (
