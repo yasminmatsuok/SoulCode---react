@@ -16,13 +16,13 @@ export class ApiError extends Error {
 export const NETWORK_ERROR_STATUS = 0;
 
 const MENSAGENS_PADRAO: Record<number, string> = {
-  [NETWORK_ERROR_STATUS]: "Não foi possível conectar ao servidor. Verifique sua internet e tente novamente.",
-  400: "Os dados enviados são inválidos. Revise o formulário.",
-  401: "Sua sessão expirou. Entre novamente.",
-  403: "Você não tem permissão para esta ação.",
-  404: "O item procurado não foi encontrado.",
-  409: "Esta ação entra em conflito com o estado atual dos dados.",
-  500: "O servidor encontrou um erro. Tente novamente em instantes.",
+  [NETWORK_ERROR_STATUS]: "Não conseguimos falar com o servidor. Confira sua internet e tente de novo em alguns segundos.",
+  400: "Alguns dados não estão certos. Revise os campos destacados e tente novamente.",
+  401: "Sua sessão terminou. Entre de novo para continuar.",
+  403: "Você não tem permissão para fazer isso.",
+  404: "Não encontramos o que você procurou. Ele pode ter sido removido.",
+  409: "Não foi possível concluir: esse item mudou enquanto você usava a página. Atualize e tente de novo.",
+  500: "Tivemos um problema no servidor. Tente de novo em instantes.",
 };
 
 export function mensagemPorStatus(status: number): string {
