@@ -46,15 +46,15 @@ Legenda: ✅ pronto · 🙋 depende de você/grupo · ☕ depende da API Java
 
 | Requisito | Status |
 |---|---|
-| GET listagem / GET detalhe | ✅ (mock) · ☕ (real) |
-| POST, PUT, PATCH, DELETE (com confirmação) | ✅ (mock) · ☕ (real) |
+| GET listagem / GET detalhe | ✅ (mock) · ✅ (real: usuários e avatares) |
+| POST, PUT, PATCH, DELETE (com confirmação) | ✅ (mock) · ✅ (real: POST, PUT e DELETE de usuários) |
 | Loading, erro e vazio em toda tela com dados | ✅ `DataState` |
 | Mensagens para 400, 404, 500 e rede | ✅ `services/api.ts` |
 | `useState`, `useEffect`, `useContext`, `useFetch<T>` | ✅ |
 | Validação de formulários | ✅ |
 | `endpoints.ts`, services, mappers, mocks com `VITE_USE_MOCK` | ✅ |
 | `CONTRATO_API.md` e `INTEGRACAO_JAVA.md` | ✅ `docs/` |
-| API publicada em HTTPS com CORS | ☕ |
+| API publicada em HTTPS com CORS | ✅ https://soulcode-api.onrender.com (Spring Boot no Render) |
 
 ## Responsividade e acessibilidade
 
@@ -79,7 +79,7 @@ Legenda: ✅ pronto · 🙋 depende de você/grupo · ☕ depende da API Java
 | `vercel.json` com rewrite de SPA | ✅ |
 | `.env.example` no repo e `.env` no `.gitignore` | ✅ |
 | Projeto criado na Vercel + variáveis configuradas | ✅ https://soul-code-react.vercel.app (testado em 360, 768, 992 e 1440px) |
-| Variáveis da API real na Vercel | ☕ |
+| Variáveis da API real na Vercel | ✅ `VITE_API_URL` configurada |
 
 ## Git / GitHub
 
@@ -94,6 +94,6 @@ Legenda: ✅ pronto · 🙋 depende de você/grupo · ☕ depende da API Java
 | Requisito | Status |
 |---|---|
 | README com as 7 seções | ✅ |
-| Links da Vercel, do YouTube e da API | ✅ Vercel · 🙋 YouTube · ☕ API (`[INSERIR LINK]`) |
+| Links da Vercel, do YouTube e da API | ✅ Vercel · ✅ GitHub Pages · 🙋 YouTube · ✅ API |
 | Vídeo de até 3 min | 🙋 `docs/ROTEIRO_VIDEO.md` |
 | .ZIP sem `node_modules`, < 50MB, pelo Portal do Aluno | 🙋 |
