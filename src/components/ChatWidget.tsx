@@ -18,6 +18,8 @@ function montarRespostas(saldo: Saldo | null): Record<string, string> {
           saldo.nivel.faltamParaProximo ? ` Faltam ${formatarPontos(saldo.nivel.faltamParaProximo)} para subir.` : ""
         }`
       : semSaldo,
+    "como converter pontos?":
+      "É fácil! 🎁 Abra a página Converter, escolha uma recompensa e a quantidade. O resumo mostra quanto vai custar e quanto sobra do seu saldo antes de confirmar. Depois é só acompanhar o pedido no Histórico!",
   };
 }
 
