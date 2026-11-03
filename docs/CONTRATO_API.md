@@ -81,6 +81,13 @@ public class CorsConfig implements WebMvcConfigurer {
 | GET | `/usuarios/{usuarioId}/conversoes` | Histórico de conversões do usuário |
 | POST | `/conversoes` | Converte pontos em uma recompensa |
 | PATCH | `/conversoes/{id}/status` | Altera o status de uma conversão (ex.: cancelar) |
+| GET | `/api/status` | Verifica se a API está no ar (**já publicada**) |
+| GET | `/api/usuarios` | Lista usuários (**já publicada**) |
+| GET | `/api/usuarios/{id}` | Detalhe de um usuário (**já publicada**) |
+| POST | `/api/usuarios` | Cadastra usuário (**já publicada**) |
+| PUT | `/api/usuarios/{id}` | Atualiza usuário (**já publicada**) |
+| DELETE | `/api/usuarios/{id}` | Exclui usuário (**já publicada**) |
+| GET | `/api/avatares` | Lista avatares (**já publicada**) |
 
 ---
 
@@ -275,7 +282,27 @@ Body:
 
 ---
 
+## 5. Usuários e Avatares (já publicadas)
+
+Estas rotas já existem na API Spring Boot publicada no Render (`https://soulcode-api.onrender.com`) e usam o
+prefixo `/api`. O front sempre chama a API real para elas, mesmo com `VITE_USE_MOCK=true`.
+
+| Método | Rota | Resposta |
+|---|---|---|
+| GET | `/api/status` | 200 — API no ar |
+| GET | `/api/usuarios` | 200 — array de `Usuario` (pode ser `[]`) |
+| GET | `/api/usuarios/{id}` | 200 \| 404 |
+| POST | `/api/usuarios` | 201 \| 400 — usuário criado |
+| PUT | `/api/usuarios/{id}` | 200 \| 400 \| 404 — usuário atualizado |
+| DELETE | `/api/usuarios/{id}` | 204 \| 404 |
+| GET | `/api/avatares` | 200 — array de `Avatar` (pode ser `[]`) |
+
+> O plano gratuito do Render "dorme" sem uso: a primeira requisição pode levar até 1 minuto.
+
+---
+
 ## Dados iniciais sugeridos
 
 Para a demonstração ficar igual ao mock, popular o banco com os mesmos dados de `src/mocks/seed.ts`
 (6 missões, 7 recompensas, 3 conversões e o saldo do usuário 1).
+
