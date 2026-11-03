@@ -85,3 +85,35 @@ titulo: dto.title,
 - [ ] Colocar a URL da API no `README.md` (seção "Como usar")
 - [ ] Commit: `git commit -m "chore: integra front com a API Java"` numa branch `feature/integracao-api-java`
 - [ ] Gravar o vídeo mostrando o CRUD com a API real (aba Network aberta ajuda a provar)
+
+## 7. Rodar a API Spring Boot no próprio computador
+
+Útil para testar o front sem depender do Render (que "dorme" e demora na primeira requisição).
+
+1. Instale o **JDK 17 ou mais novo** e abra o projeto da API no IntelliJ (ou VS Code com o Extension Pack for Java).
+2. Rode a classe que tem `@SpringBootApplication` (botão ▶ do IntelliJ) ou, no terminal, na pasta da API:
+
+   ```bash
+   ./mvnw spring-boot:run        # Windows: mvnw.cmd spring-boot:run
+   ```
+
+3. A API sobe em `http://localhost:8080`. Teste no navegador: `http://localhost:8080/api/status`.
+4. No `.env` do front, aponte para ela e reinicie o `npm run dev`:
+
+   ```env
+   VITE_API_URL=http://localhost:8080
+   ```
+
+### Onde fica o CORS no Spring Boot
+
+O CORS fica numa classe de configuração que implementa `WebMvcConfigurer` (ex.: `config/CorsConfig.java`) ou em
+anotações `@CrossOrigin` nos controllers. As origens liberadas precisam ser exatamente:
+
+| Ambiente | Origem |
+|---|---|
+| Desenvolvimento | `http://localhost:5173` |
+| Vercel | `https://soul-code-react.vercel.app` |
+| GitHub Pages | `https://yasminmatsuok.github.io` |
+
+O exemplo completo está em [`CONTRATO_API.md`](./CONTRATO_API.md#cors-obrigatório). Depois de mudar, faça push para o
+Render publicar de novo.
