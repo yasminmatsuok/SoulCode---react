@@ -31,6 +31,16 @@ const SUGESTOES = [
   "Como converter pontos?",
 ];
 
+// Ignora maiúsculas, acentos e pontuação: "ver minhas missoes" encontra "ver minhas missões"
+function normalizar(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[?!.,]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
 let messageId = 0;
 const nextId = () => `msg-${messageId++}`;
 
@@ -65,8 +75,10 @@ function ChatWidget({ saldo }: ChatWidgetProps) {
     setInputValue("");
 
     setTimeout(() => {
+      const respostas = montarRespostas(saldo);
+      const chave = Object.keys(respostas).find((pergunta) => normalizar(pergunta) === normalizar(text));
       const resposta =
-        montarRespostas(saldo)[text.trim().toLowerCase()] ||
+        (chave && respostas[chave]) ||
         "Entendi! Estou aqui para te ajudar a ser mais sustentável. 🌱 Tente perguntar sobre suas missões ou pontos!";
       setMessages((prev) => [
         ...prev,
