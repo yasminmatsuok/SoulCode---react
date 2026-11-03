@@ -55,4 +55,10 @@ export const faqEntries: FaqEntry[] = [
     answer:
       "Sim! A plataforma utiliza autenticação segura, criptografia de dados sensíveis, controle de acesso e separação entre dados pessoais e analíticos para garantir sua privacidade em todos os momentos.",
   },
+  {
+    id: "cadastro-avatar",
+    question: "Como cadastro um usuário e crio meu avatar?",
+    answer:
+      "Acesse a página Usuários e clique em Novo usuário. Preencha nome, e-mail, senha, idade, cidade e seu principal interesse. Os dados são salvos na nossa API Java, e os avatares criados aparecem logo abaixo da lista de usuários.",
+  },
 ];
