@@ -28,6 +28,7 @@ const SUGESTOES = [
   "Quantos pontos tenho?",
   "Dicas sustentáveis",
   "Meu nível",
+  "Como converter pontos?",
 ];
 
 let messageId = 0;
