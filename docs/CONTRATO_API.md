@@ -299,10 +299,59 @@ prefixo `/api`. O front sempre chama a API real para elas, mesmo com `VITE_USE_M
 
 > O plano gratuito do Render "dorme" sem uso: a primeira requisição pode levar até 1 minuto.
 
+### Objeto `Usuario` (resposta)
+
+```json
+{
+  "id": 10,
+  "nome": "Davi",
+  "email": "davi@email.com",
+  "idade": 19,
+  "cidade": "São Paulo",
+  "interesse": "Transporte",
+  "pontos": 30
+}
+```
+
+| Campo | Tipo | Regras |
+|---|---|---|
+| `id` | number | gerado pela API |
+| `nome` | string | obrigatório, 3–100 caracteres |
+| `email` | string | obrigatório, e-mail válido |
+| `idade` | number | inteiro, 10–120 |
+| `cidade` | string | obrigatório |
+| `interesse` | string | `"Reciclagem"`, `"Energia"`, `"Transporte"`, `"Alimentação"` ou `"Água"` |
+| `pontos` | number | gerado pela API (começa em 0) |
+
+### Body do `POST` e do `PUT /api/usuarios`
+
+```json
+{
+  "nome": "Davi",
+  "email": "davi@email.com",
+  "senha": "minhaSenha123",
+  "idade": 19,
+  "cidade": "São Paulo",
+  "interesse": "Transporte"
+}
+```
+
+> A `senha` só é **enviada**. A API guarda o hash e **não deve devolver** a senha nem o hash nas respostas.
+
+### Objeto `Avatar`
+
+```json
+{
+  "id": 1,
+  "nome": "EcoDavi",
+  "nivel": 1,
+  "usuario": { "id": 10, "nome": "Davi" }
+}
+```
+
 ---
 
 ## Dados iniciais sugeridos
 
 Para a demonstração ficar igual ao mock, popular o banco com os mesmos dados de `src/mocks/seed.ts`
 (6 missões, 7 recompensas, 3 conversões e o saldo do usuário 1).
-
