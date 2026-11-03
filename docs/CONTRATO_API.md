@@ -1,4 +1,4 @@
-# Contrato da API — SoulCode (front-end ↔ Java/Quarkus)
+# Contrato da API — SoulCode (front-end ↔ Java/Spring Boot)
 
 Este documento descreve **exatamente** o que o front-end espera da API RESTful.
 Se algum nome de rota ou campo precisar ser diferente, avise o time do front: a mudança é feita em
@@ -23,7 +23,7 @@ Para respostas 4xx, devolver um corpo com a mensagem que o usuário vai ler:
 { "mensagem": "Saldo insuficiente: você tem 150 pontos e precisa de 300." }
 ```
 
-> O front também aceita o campo `message` (padrão do Quarkus). Para 5xx, o front mostra uma mensagem genérica.
+> O front também aceita os campos `erro` e `message` (padrão do Spring Boot). Para 5xx, o front mostra uma mensagem genérica.
 
 | Status | Quando usar |
 |---|---|
@@ -37,15 +37,27 @@ Para respostas 4xx, devolver um corpo com a mensagem que o usuário vai ler:
 
 ### CORS (obrigatório)
 
-Liberar as origens `http://localhost:5173` e `https://soul-code-react.vercel.app`, métodos
-`GET, POST, PUT, PATCH, DELETE, OPTIONS` e header `Content-Type`. Exemplo para `application.properties`:
+Liberar as origens `http://localhost:5173` (desenvolvimento), `https://soul-code-react.vercel.app` (Vercel) e
+`https://yasminmatsuok.github.io` (GitHub Pages), métodos `GET, POST, PUT, PATCH, DELETE, OPTIONS` e header
+`Content-Type`. Exemplo de configuração no Spring Boot:
 
-```properties
-quarkus.http.cors=true
-quarkus.http.cors.origins=http://localhost:5173,https://soul-code-react.vercel.app
-quarkus.http.cors.methods=GET,POST,PUT,PATCH,DELETE,OPTIONS
-quarkus.http.cors.headers=Content-Type
+```java
+@Configuration
+public class CorsConfig implements WebMvcConfigurer {
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins(
+                        "http://localhost:5173",
+                        "https://soul-code-react.vercel.app",
+                        "https://yasminmatsuok.github.io")
+                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+                .allowedHeaders("*");
+    }
+}
 ```
+
+> A origem precisa ser exata: com `https://` e **sem barra no final**.
 
 ---
 
