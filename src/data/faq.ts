@@ -61,10 +61,4 @@ export const faqEntries: FaqEntry[] = [
     answer:
       "Acesse a página Usuários e clique em Novo usuário. Preencha nome, e-mail, senha, idade, cidade e seu principal interesse. Os dados são salvos na nossa API Java, e os avatares criados aparecem logo abaixo da lista de usuários.",
   },
-  {
-    id: "demora-primeiro-acesso",
-    question: "Por que o site demora na primeira vez que abro a página Usuários?",
-    answer:
-      "Nossa API Java fica hospedada em um servidor gratuito que \"dorme\" quando ninguém usa. No primeiro acesso ele precisa acordar, o que pode levar até 1 minuto. Depois disso, tudo fica rápido!",
-  },
 ];
