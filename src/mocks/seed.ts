@@ -62,6 +62,26 @@ export const MISSOES_SEED: MissaoApi[] = [
     pontos: 300,
     dificuldade: "dificil",
   },
+  {
+    id: 7,
+    icone: "🛍️",
+    titulo: "Leve sua Ecobag",
+    descricao: "Use sacola reutilizável em todas as compras durante 2 semanas.",
+    descricaoLonga:
+      "Durante 2 semanas, recuse sacolas plásticas no mercado, na farmácia e nas lojas, usando sempre uma ecobag ou sacola reutilizável. Registre uma foto da sacola em uso para comprovar a missão.",
+    pontos: 40,
+    dificuldade: "facil",
+  },
+  {
+    id: 8,
+    icone: "🍂",
+    titulo: "Composte Restos de Comida",
+    descricao: "Monte uma composteira e transforme restos de alimentos em adubo por 1 mês.",
+    descricaoLonga:
+      "Monte uma composteira doméstica (pode ser de baldes) e deposite nela cascas de frutas, legumes e borra de café durante 1 mês. Ao final, use o adubo em um vaso ou jardim e registre o resultado com fotos.",
+    pontos: 150,
+    dificuldade: "medio",
+  },
 ];
 
 export const RECOMPENSAS_SEED: RecompensaApi[] = [
