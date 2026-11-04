@@ -176,7 +176,7 @@ Passo a passo completo da integração: [`docs/INTEGRACAO_JAVA.md`](docs/INTEGRA
 | Repositório GitHub | https://github.com/yasminmatsuok/SoulCode---react |
 | Deploy (Vercel) | https://soul-code-react.vercel.app |
 | Deploy (GitHub Pages) | https://yasminmatsuok.github.io/SoulCode---react/ |
-| Vídeo no YouTube | [INSERIR LINK] |
+| Vídeo no YouTube | https://youtu.be/9xNCtKi8030 |
 | API Java (Spring Boot) | https://soulcode-api.onrender.com (ex.: [`/api/usuarios`](https://soulcode-api.onrender.com/api/usuarios)) |
 | Contrato da API | [`docs/CONTRATO_API.md`](docs/CONTRATO_API.md) |
 
